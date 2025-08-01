@@ -2,7 +2,7 @@
 
 Welcome to my **Ansible Project Repository**, where I will be uploading a series of real-world **Cloud DevOps automation projects** built using **Ansible**.
 
-Whether you are a beginner exploring Infrastructure as Code (IaC), or a DevOps engineer looking for practical examples—this repository will serve as a growing collection of **modular, reusable, and production-ready Ansible projects**.
+Whether you are a beginner exploring Infrastructure as Code (IaC), or a DevOps engineer looking for practical examples this repository will serve as a growing collection of **modular, reusable, and production-ready Ansible projects**.
 
 ---
 
