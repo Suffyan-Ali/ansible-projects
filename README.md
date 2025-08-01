@@ -44,7 +44,7 @@ A structured way to organize tasks, handlers, templates, and variables—promoti
 
 ---
 
-## 🚀 What's in this Repository?
+##  Wha is in this Repository?
 
 This repository will continuously grow to include:
 
