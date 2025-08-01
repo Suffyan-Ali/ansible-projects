@@ -68,5 +68,5 @@ Every project will be clearly structured with:
 
 Clone the repository:
 ```bash
-git clone https://github.com/Suffyan-Ali/ansible-project.git
-cd ansible-project
+git clone https://github.com/Suffyan-Ali/ansible-projects.git
+cd ansible-projects
