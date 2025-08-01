@@ -1,8 +1,8 @@
 # 🔧 Ansible Project Repository
 
-Welcome to my **Ansible Project Repository**, where I’ll be uploading a series of real-world **Cloud DevOps automation projects** built using **Ansible**.
+Welcome to my **Ansible Project Repository**, where I will be uploading a series of real-world **Cloud DevOps automation projects** built using **Ansible**.
 
-Whether you're a beginner exploring Infrastructure as Code (IaC), or a DevOps engineer looking for practical examples—this repository will serve as a growing collection of **modular, reusable, and production-ready Ansible projects**.
+Whether you are a beginner exploring Infrastructure as Code (IaC), or a DevOps engineer looking for practical examples—this repository will serve as a growing collection of **modular, reusable, and production-ready Ansible projects**.
 
 ---
 
@@ -12,7 +12,7 @@ Whether you're a beginner exploring Infrastructure as Code (IaC), or a DevOps en
 
 Key highlights:
 - **Agentless**: No need to install any agent on managed nodes.
-- **Idempotent**: Running the same playbook multiple times won't change the system if it's already in the desired state.
+- **Idempotent**: Running the same playbook multiple times will not change the system if it's already in the desired state.
 - **YAML-based Playbooks**: Human-readable, declarative syntax.
 
 ---
