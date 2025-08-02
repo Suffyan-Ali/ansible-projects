@@ -44,10 +44,4 @@ git-auto-deploy/
 - Git installed on both local and remote machines
 - Python installed on the remote server
 
----
 
-## 📂 inventory.ini Example
-
-```ini
-[webserver]
-your_server_ip ansible_user=ubuntu ansible_ssh_private_key_file=~/.ssh/id_rsa
