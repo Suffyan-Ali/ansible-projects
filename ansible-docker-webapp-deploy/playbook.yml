@@ -1,1 +1,35 @@
+---
+- name: Deploy Dockerized Web App
+  hosts: web
+  become: true
+
+  tasks:
+    - name: Install required packages
+      apt:
+        name:
+          - docker.io
+          - docker-compose
+        update_cache: yes
+        state: present
+
+    - name: Create app directory
+      file:
+        path: /opt/webapp
+        state: directory
+
+    - name: Copy docker-compose.yml
+      copy:
+        src: files/docker-compose.yml
+        dest: /opt/webapp/docker-compose.yml
+
+    - name: Copy application files
+      copy:
+        src: files/app/
+        dest: /opt/webapp/app/
+        mode: '0644'
+
+    - name: Start the app using Docker Compose
+      shell: docker-compose up -d
+      args:
+        chdir: /opt/webapp
 
