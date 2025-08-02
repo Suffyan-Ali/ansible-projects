@@ -1,6 +1,6 @@
 # 🚀 Git Auto Deploy with Ansible
 
-This project sets up a **Git-based automatic deployment system** using **Ansible**, **Nginx**, and **Git hooks**. It allows developers to push code to a remote Git repository and automatically deploy it to a live web server — perfect for static websites and rapid development workflows.
+This project sets up a **Git-based automatic deployment system** using **Ansible**, **Nginx**, and **Git hooks**. It allows developers to push code to a remote Git repository and automatically deploy it to a live web server perfect for static websites and rapid development workflows.
 
 ---
 
