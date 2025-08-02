@@ -1,1 +1,32 @@
 
+- name: Collect server information and fetch reports
+  hosts: servers
+  gather_facts: false
+  tasks:
+    - name: Create remote directory for scripts
+      ansible.builtin.file:
+        path: /tmp/server_report
+        state: directory
+        mode: '0755'
+
+    - name: Copy command map JSON to remote host
+      ansible.builtin.copy:
+        src: files/command_map.json
+        dest: /tmp/server_report/command_map.json
+
+    - name: Copy Python script to remote host
+      ansible.builtin.copy:
+        src: files/collect_info.py
+        dest: /tmp/server_report/collect_info.py
+        mode: '0755'
+
+    - name: Execute the Python script remotely
+      ansible.builtin.shell: python3 /tmp/server_report/collect_info.py
+
+    - name: Fetch the generated CSV file
+      ansible.builtin.fetch:
+        src: /tmp/server_report/server_report_{{ inventory_hostname }}.csv
+        dest: reports/
+        flat: yes
+
+
