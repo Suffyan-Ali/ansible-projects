@@ -1,1 +1,53 @@
+---
+- name: Git Auto Deploy with Ansible
+  hosts: webserver
+  become: yes
 
+  tasks:
+    - name: Install required packages
+      apt:
+        name:
+          - nginx
+          - git
+        update_cache: yes
+
+    - name: Create web directory
+      file:
+        path: /var/www/html/
+        state: directory
+        mode: '0755'
+
+    - name: Create bare Git repository
+      command: git init --bare /var/www/site.git
+      args:
+        creates: /var/www/site.git
+
+    - name: Create post-receive hook
+      copy:
+        src: files/deploy-hook.sh
+        dest: /var/www/site.git/hooks/post-receive
+        mode: '0755'
+
+    - name: Create initial index.html
+      copy:
+        src: files/index.html
+        dest: /tmp/index.html
+
+    - name: Setup initial working tree
+      shell: |
+        git clone /var/www/site.git /tmp/temp-site
+        cp /tmp/index.html /tmp/temp-site/index.html
+        cd /tmp/temp-site
+        git config user.name "Ansible"
+        git config user.email "ansible@localhost"
+        git add .
+        git commit -m "Initial commit"
+        git push origin master
+      args:
+        creates: /tmp/temp-site
+
+    - name: Ensure Nginx is running
+      service:
+        name: nginx
+        state: started
+        enabled: yes
