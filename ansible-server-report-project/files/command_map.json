@@ -1,1 +1,6 @@
+{
+  "Hostname": "hostname",
+  "IP Address": "hostname -I",
+  "Disk Usage": "df -h"
+}
 
