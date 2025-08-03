@@ -1,1 +1,9 @@
+---
+- name: Copy file to remote hosts
+  hosts: webservers
+  tasks:
+    - name: Deploy welcome message
+      ansible.builtin.copy:
+        src: files/welcome_message.txt
+        dest: /tmp/welcome_message.txt
 
