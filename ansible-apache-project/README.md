@@ -67,15 +67,6 @@ Playbooks let you:
 | `playbook-with-loops.yml`      | Loops through package installs or users      |
 | `playbook-with-handlers.yml`   | Demonstrates handlers and notifications      |
 
----
 
-##  Sample Inventory
-
-```ini
-[webservers]
-192.168.1.100 ansible_user=ubuntu
-
-[dbservers]
-192.168.1.101 ansible_user=ubuntu
 
 
