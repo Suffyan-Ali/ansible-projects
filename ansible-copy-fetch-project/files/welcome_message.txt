@@ -1,1 +1,3 @@
+Welcome to your assigned web server.
+This file was deployed using Ansible.
 
