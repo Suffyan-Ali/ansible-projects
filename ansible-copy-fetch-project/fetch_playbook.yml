@@ -1,1 +1,10 @@
+---
+- name: Fetch file from remote hosts
+  hosts: webservers
+  tasks:
+    - name: Fetch system log file
+      ansible.builtin.fetch:
+        src: /var/log/syslog
+        dest: ./logs/
+        flat: yes
 
