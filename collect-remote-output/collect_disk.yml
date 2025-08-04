@@ -1,1 +1,25 @@
 
+---
+- name: Collect Disk Usage from Remote Servers
+  hosts: linux_servers
+  gather_facts: no
+  become: yes
+
+  tasks:
+
+    - name: Run 'df -h' to get disk usage
+      shell: df -h
+      register: disk_usage
+
+    - name: Create output folder (only on control node)
+      delegate_to: localhost
+      run_once: true
+      file:
+        path: ./output
+        state: directory
+
+    - name: Save disk usage output to local file
+      local_action:
+        module: copy
+        content: "{{ inventory_hostname }}:\n{{ disk_usage.stdout }}"
+        dest: "./output/{{ inventory_hostname }}_disk.txt"
